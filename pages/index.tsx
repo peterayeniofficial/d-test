@@ -26,6 +26,7 @@ export default function IndexPage({
       <p>Below you will find a list of our articles.</p>
       {
         //@todo: display articles
+        allArticles.map((article: Article) => <p>{article.title}</p>)
       }
     </>
   )
