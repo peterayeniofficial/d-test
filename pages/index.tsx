@@ -1,24 +1,28 @@
 import Link from 'next/link'
-import type { InferGetStaticPropsType } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Article } from "../interfaces";
 
-export async function getStaticProps() {
+interface IndexPageProps {
+  allArticles: Article[]
+}
+export const getStaticProps: GetStaticProps = async() => {
   //@todo: get articles from http://localhost:3000/api/articles and add to props
-
+  const res = await fetch('http://localhost:3000/api/articles')
+  const data: IndexPageProps = await res.json()
   return {
     props: {
-      journalTitle: 'DCJ Journal',
-      another: 'flip',
+      allArticles: data
     },
   }
 }
 
 export default function IndexPage({
-  journalTitle,
+  allArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(allArticles)
   return (
     <>
-      <h1>{journalTitle}</h1>
+      
       <p>Below you will find a list of our articles.</p>
       {
         //@todo: display articles
