@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Box, Container, SimpleGrid, Heading, Text } from '@chakra-ui/react'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Article } from "../interfaces";
 
@@ -28,13 +29,18 @@ export default function IndexPage({
   })
 
   return (
-    <>
+    <Container mt={10}>
       
-      <p>Below you will find a list of our articles.</p>
-      {
+      <Heading mb={5}>Below you will find a list of our articles.</Heading>
+     <SimpleGrid columns={2} spacing={10}>
+     {
         //@todo: display articles
-        allArticles.map((article: Article) => <p>{article.title}</p>)
+        allArticles.map((article: Article) => <Box key={article.id}>
+          <Text>
+          {article.title}
+          </Text></Box>)
       }
-    </>
+     </SimpleGrid>
+    </Container>
   )
 }
