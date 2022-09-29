@@ -35,10 +35,8 @@ export const getStaticPaths: GetStaticPaths = async() => {
   }
 
 
-const Article = ({ article }) =>{
-    return (
-    
-    );
+function ArticlePage({article}) {
+    return <p>{article.fulltext}</p>
 }
 
-export default Article
+export default ArticlePage

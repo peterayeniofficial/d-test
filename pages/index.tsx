@@ -49,7 +49,7 @@ export default function IndexPage({
                   <Text>Title:</Text>
                 </Box>
                 <Box color={'blue.600'}>
-                  <NextLink href={`/article/${article.id}`} passHref>
+                  <NextLink href='#' passHref>
                     <Link>
                       <Text fontSize="lg">{article.title}</Text>
                     </Link>
