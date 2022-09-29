@@ -27,7 +27,6 @@ export default function IndexPage({
     return first.getUTCSeconds() - second.getUTCSeconds()
   })
 
-
   return (
     <>
       
