@@ -37,11 +37,7 @@ export const getStaticPaths: GetStaticPaths = async() => {
 
 const Article = ({ article }) =>{
     return (
-      <Container>
-      <Text>
-      {article.fulltext}
-      </Text>
-      </Container>
+    
     );
 }
 
