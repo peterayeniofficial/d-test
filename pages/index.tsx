@@ -20,6 +20,14 @@ export default function IndexPage({
   allArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   console.log(allArticles)
+   allArticles.sort((a: Article ,b: Article)=> {
+    let first = new Date(a.date) 
+    let second = new Date(b.date)
+    console.log(first.getUTCSeconds(), 'f')
+    return first.getUTCSeconds() - second.getUTCSeconds()
+  })
+
+
   return (
     <>
       
